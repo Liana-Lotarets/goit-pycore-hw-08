@@ -150,7 +150,7 @@ class Record:
 
     def __str__(self):
         return f'Contact name: {self.name.value}, ' + \
-            f'phones: {'; '.join(phone.value for phone in self.phones)}, ' + \
+            f'phones: {"; ".join(phone.value for phone in self.phones)}, ' + \
             f'birthday: {self.birthday.value}'
 
 
@@ -222,6 +222,6 @@ class AddressBook(UserDict):
         result = 'Address Book\n'
         for record in self.data.values():
              result += (f'  Name: {record.name.value}, '
-             f'phone(s): {'; '.join(phone.value for phone in record.phones) if record.phones else 'unknown'}, '
-             f'birthday: {record.birthday if record.birthday else 'unknown'}\n')
+             f'phone(s): {"; ".join(phone.value for phone in record.phones) if record.phones else "unknown"}, '
+             f'birthday: {record.birthday if record.birthday else "unknown"}\n')
         return result.strip()
